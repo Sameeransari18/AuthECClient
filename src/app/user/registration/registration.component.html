@@ -1,4 +1,6 @@
-<div class="mb-4 h2 text-success">Sign up</div>
+<div class="mb-4">
+  <h2 class="text-success">Sign up</h2>
+</div>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="mb-3">
@@ -72,3 +74,12 @@
     </button>
   </div>
 </form>
+
+<div class="mt-2">
+  Already have an account?
+  <a
+    routerLink="/signin"
+    class="fw-medium text-decoration-none text-success d-inline-block"
+    >Sign in
+  </a>
+</div>

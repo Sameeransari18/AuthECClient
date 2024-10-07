@@ -10,11 +10,12 @@ import {
 import { FirstkeyPipe } from '../../shared/pipes/first-key.pipe';
 import { AuthService } from '../../shared/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, FirstkeyPipe],
+  imports: [ReactiveFormsModule, CommonModule, FirstkeyPipe, RouterLink],
   templateUrl: './registration.component.html',
   styles: ``,
 })
@@ -59,7 +60,7 @@ export class RegistrationComponent {
   onSubmit() {
     this.isSubmitted = true;
     if (this.form.valid) {
-      this.service.CreateUser(this.form.value).subscribe({
+      this.service.createUser(this.form.value).subscribe({
         next: (res: any) => {
           if (res.succeeded) {
             console.log(res);
